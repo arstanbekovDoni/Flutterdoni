@@ -1,19 +1,16 @@
-class Car {
-  String name;
-  double mileage;
-  double maxSpeed;
+class Cars{
+  final String name;
+  final String model;
+  final int horsepowers;
+  final int probeg;
 
-  Car({
+  Cars({
     required this.name,
-    this.mileage = 10000,
-    this.maxSpeed = 180,
+    required this.model,
+    required this.horsepowers,
+    required this.probeg,
   });
 
-  double convertKmToMiles() {
-    return mileage * 0.621371;
-  }
-
-  double convertMaxSpeedToMiles() {
-    return maxSpeed * 0.621371;
-  }
+  double get probegInMiles => probeg*0.621;
+  
 }

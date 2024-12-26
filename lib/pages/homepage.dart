@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:sup/pages/carspage.dart';
 import 'package:sup/pages/columnrow.dart';
 import 'package:sup/pages/settingspage.dart';
-import 'package:sup/pages/newspage.dart';
+import 'package:sup/pages/widget.dart';
 
 class HomePage extends StatefulWidget {
   final Widget child;
@@ -17,13 +18,19 @@ class _HomePageState extends State<HomePage> {
   void changeTab(int index) {
     switch (index) {
       case 0:
-        context.go(Newspage.route);
+        context.go('/');
         break;
       case 1:
-        context.go(SettingsPage.route);
+        context.go('${SettingsPage.route}');
         break;
       case 2:
-        context.go(ColumnRow.route);
+        context.go('${ColumnRow.route}');
+        break;
+      case 3:
+        context.go('${CarsPage.route}');
+        break;
+      case 4:
+        context.go('${CardWidget.route}');
         break;
     }
     setState(() {
@@ -42,7 +49,9 @@ class _HomePageState extends State<HomePage> {
           destinations: const [
             NavigationDestination(icon: Icon(Icons.newspaper), label: 'News'),
             NavigationDestination(icon: Icon(Icons.settings), label: 'Settings'),
-            NavigationDestination(icon: Icon(Icons.air), label: 'Column')
+            NavigationDestination(icon: Icon(Icons.air), label: 'Column'),
+            NavigationDestination(icon: Icon(Icons.car_repair), label: 'Carspage',),
+            NavigationDestination(icon: Icon(Icons.card_giftcard), label: 'MyWidget',),
           ]),
     );
   }
